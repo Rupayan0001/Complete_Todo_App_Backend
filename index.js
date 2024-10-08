@@ -10,14 +10,12 @@ const cors = require("cors");
 mongoose.connect("mongodb+srv://rdworld119:Rd%4012122012@cluster0.gzxif.mongodb.net/todoss?retryWrites=true&w=majority")
 
 const app = express();
-const allowedOrigins = [
-    'https://complete-todo-app.vercel.app', // Your Vercel frontend
-    'http://127.0.0.1:5500' // Your local development server
-];
+const allowedOrigin = 'https://complete-todo-app.vercel.app';
+
 app.use(cors({
-    origin: allowedOrigins,
+    origin: allowedOrigin, // Allow only the Vercel URL
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true // If you need to include credentials like cookies
+    credentials: true // Allow credentials if necessary (for cookies, tokens, etc.)
 }));
 app.use(express.json());
 const signupSchema = zod.object({
