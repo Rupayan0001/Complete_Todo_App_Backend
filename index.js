@@ -11,7 +11,7 @@ require("dotenv").config();
 mongoose.connect(process.env.MONGO_URL)
 
 const app = express();
-const allowedOrigins = "https://complete-todo-app-git-main-rupayan0001s-projects.vercel.app";
+const allowedOrigins = "https://jazzy-youtiao-bfb874.netlify.app";
 // https://complete-todo-app.vercel.app
 app.use(cors({
     origin: allowedOrigins, // Allow only the Vercel URL
